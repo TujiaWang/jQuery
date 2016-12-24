@@ -626,6 +626,7 @@ $('ul').on('click','li span',function(){
 > 也可以用clientX和clientY，jQuery已有兼容
 
 #### 键盘信息
+- 事件对象.which 得到按键的对应ascll码
 - 当按下Ctrl键的时候，事件对象.ctrlKey为true，否则为false;
 - 当按下Shift键的时候，事件对象.shiftKey为true，否则为false;
 - 当按下Alt键的时候，事件对象.altKey为true，否则为false;

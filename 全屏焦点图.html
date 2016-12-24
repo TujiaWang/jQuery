@@ -12,10 +12,12 @@
             overflow: hidden;
         }
         .banner ul{
-            width:400%;
+            /*width:400%;*/
+            width: 1000%;  /*当图片增多时需要每次来改，所以干脆把值给大点*/
             position: absolute;
             left:0%;  /*保证在任何屏幕下都能很好的占满一屏，不会因为滑动过程中造成影响*/
             top:0;
+            /*border:1px solid red;*/
         }
         /*
             全屏的焦点图，需要注意此处的宽度
@@ -23,9 +25,11 @@
         */
         .banner ul li{
             height:380px;
-            width:25%;
+            /*width:25%;*/
+            width: 10%;
             float: left;
             background: url('images/74/1.jpg') no-repeat center top;
+            list-style: none;
         }
         .banner span{
             position: absolute;
@@ -50,6 +54,14 @@
         $(function(){
             var index = 0;
             var timer = null;
+
+            //当屏幕分辨率很高时图片两边就没有任何内容，所以给添加一个和图片两边颜色相同的背景色
+            var colors = ['#070512','#000000','#43A3F9','#020202'];
+            $('ul li').each(function(index,el){
+                $(this).css('background-color',colors[index]);
+            });
+
+
             $('.arrow-right').click(function(){
                 index++;
                 if(index > 3){
